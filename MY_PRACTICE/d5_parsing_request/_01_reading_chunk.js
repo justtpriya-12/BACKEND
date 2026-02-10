@@ -5,7 +5,7 @@ const server = http.createServer((req, res) =>{
     //res.setheader('Content-Type', 'json');
     console.log("METHOD:", req.method);
     console.log("URL:", req.url);
-    console.log("HEADERS:", req.headers);
+    // console.log("HEADERS:", req.headers);
 
     if(req.url === '/'){
         res.setHeader('Content-Type', 'text/html');
@@ -32,6 +32,10 @@ const server = http.createServer((req, res) =>{
     }
 
     else if(req.url.toLowerCase() === "/submit-details" && req.method === "POST"){
+
+        req.on('data', (chunk) => {
+            console.log(chunk);
+        });
         fs.writeFileSync('./user.txt', 'Priya Chauhan');
         res.statusCode = 302;
         res.setHeader('location','/');
