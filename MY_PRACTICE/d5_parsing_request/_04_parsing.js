@@ -2,7 +2,7 @@
 const fs = require('fs');
 
 //const server = http.createServer((req, res) =>{
-const requestHandler = (req, res) =>{   
+const userRequestHandler = (req, res) =>{   
     //res.setheader('Content-Type', 'json');
     console.log("METHOD:", req.method);
     console.log("URL:", req.url);
@@ -52,10 +52,10 @@ const requestHandler = (req, res) =>{
 
             console.log(bodyObject);
 
-            fs.writeFileSync('user.txt', JSON.stringify(bodyObject));
+            fs.writeFileSync('./MY_PRACTICE/d5_parsing_request/user.txt', JSON.stringify(bodyObject));
         });
 
-        //fs.writeFileSync('./user.txt', 'Priya Chauhan');
+        //fs.writeFileSync('./MY_PRACTICE/d5_parsing_request/user.txt', 'Priya Chauhan');
         res.statusCode = 302;
         res.setHeader('location','/');
         
@@ -73,4 +73,4 @@ const requestHandler = (req, res) =>{
 //     console.log(`Server running on address http://localhost:${PORT}`);
 // });
 
-module.exports = userExportHandler;
+module.exports  = userRequestHandler;

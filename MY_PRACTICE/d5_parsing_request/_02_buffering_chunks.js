@@ -44,7 +44,7 @@ const server = http.createServer((req, res) =>{
             console.log(fullBody);
         });
 
-        fs.writeFileSync('./user.txt', 'Priya Chauhan');
+        fs.writeFileSync('./MY_PRACTICE/d5_parsing_request/user.txt', 'Priya Chauhan');
         res.statusCode = 302;
         res.setHeader('location','/');
         

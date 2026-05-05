@@ -32,7 +32,7 @@ const server = http.createServer((req, res) =>{
     }
 
     else if(req.url.toLowerCase() === "/submit-details" && req.method === "POST"){
-        fs.writeFileSync('./user.txt', 'Priya Chauhan');
+        fs.writeFileSync('./MY_PRACTICE/d4_request_response/user.txt', 'Priya Chauhan');
         res.statusCode = 302;
         res.setHeader('location','/');
         

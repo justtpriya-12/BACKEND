@@ -2,6 +2,9 @@ const http = require('http');
 
 const server = http.createServer((req, res) =>{
     //res.setheader('Content-Type', 'json');
+    console.log("METHOD:", req.method);
+    console.log("URL:", req.url);
+    console.log("HEADERS:", req.headers);
 
     if(req.url === '/'){
         res.setHeader('Content-Type', 'text/html');
@@ -11,7 +14,6 @@ const server = http.createServer((req, res) =>{
         res.write('</html>');
         return res.end();
     }
-
     else if(req.url === '/products') {
         res.setHeader('Content-Type', 'text/html');
         res.write('<html>');
@@ -20,7 +22,6 @@ const server = http.createServer((req, res) =>{
         res.write('</html>');
         return res.end();
     }
-    
     res.setHeader('Content-Type', 'text/html');
     res.write('<html>');
     res.write('<head><title>Complete Coding </title></head>');

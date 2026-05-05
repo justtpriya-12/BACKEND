@@ -51,10 +51,10 @@ const server = http.createServer((req, res) =>{
 
             console.log(bodyObject);
 
-            fs.writeFileSync('user.txt', JSON.stringify(bodyObject));
+            fs.writeFileSync('./MY_PRACTICE/d5_parsing_request/user.txt', JSON.stringify(bodyObject));
         });
 
-        //fs.writeFileSync('./user.txt', 'Priya Chauhan');
+        //fs.writeFileSync('./MY_PRACTICE/d5_parsing_request/user.txt', 'Priya Chauhan');
         res.statusCode = 302;
         res.setHeader('location','/');
         
